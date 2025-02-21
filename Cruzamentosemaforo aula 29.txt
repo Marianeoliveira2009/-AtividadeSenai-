@@ -1,0 +1,49 @@
+/*
+// Autor: Mariane S. Oliveira
+Nome do projeto: semafaro cruzamento
+*/
+
+
+#define LedVermelho1 8
+#define LedVerde1 13
+#define LedAmarelo1 12 
+#define LedVermelho2 3
+#define LedVerde2 4
+#define LedAmarelo2 2
+
+
+
+
+void setup()
+{
+ pinMode(LedVermelho1, OUTPUT);
+ pinMode(LedVerde1, OUTPUT);
+ pinMode(LedAmarelo1, OUTPUT);
+ pinMode(LedVermelho2, OUTPUT);
+ pinMode(LedVerde2, OUTPUT);
+ pinMode(LedAmarelo2, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(LedVermelho2, HIGH);
+  digitalWrite(LedVerde1, HIGH);
+  delay(3000);
+  digitalWrite(LedVerde1, LOW);
+  
+  digitalWrite(LedAmarelo1,HIGH);
+  delay(2000);
+  digitalWrite(LedAmarelo1, LOW);
+  digitalWrite(LedVermelho2, LOW);
+  digitalWrite(LedVermelho1, HIGH);
+  digitalWrite(LedVerde2, HIGH);
+  delay(3000);
+  digitalWrite(LedVerde2, LOW);
+  digitalWrite(LedAmarelo2,HIGH);
+  delay(2000);
+  digitalWrite(LedAmarelo2, LOW);
+  digitalWrite(LedVermelho1,LOW);
+  
+  
+  
+}
