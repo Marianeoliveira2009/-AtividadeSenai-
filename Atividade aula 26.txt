@@ -1,0 +1,61 @@
+/*Nome do arquivo:Matematica
+Autor: Mariane S Oliveira 
+Data:24/02/2025
+Descrição:Atividades relacionadas a aula anterior(Aula 26 Matematica), com calculos matematicos e logica de raciocinio.
+*/
+
+//Atividade 1
+
+int numeroA = 10;
+int numeroB = 7;
+int resultado = 0;
+float resultado1 = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+  resultado = map (600, 0, 1023,  0, 100);
+  Serial.print("o numero final eh: ");
+  Serial.println(resultado);
+  
+  //Atividade 2
+  
+  int resultado = 0;
+    
+  Serial.println(++resultado);
+  Serial.println(++resultado);
+  Serial.println(++resultado);
+  Serial.println(++resultado);
+  Serial.println(++resultado);
+  Serial.println(++resultado);
+  Serial.println(++resultado);
+  Serial.println(++resultado);
+  Serial.println(++resultado);
+  Serial.println(++resultado);
+  
+  Serial.println(--resultado);
+  Serial.println(--resultado);
+  Serial.println(--resultado);
+  Serial.println(--resultado);
+  Serial.println(--resultado);
+  Serial.println(--resultado); 
+  Serial.println(--resultado);
+  Serial.println(--resultado);
+  Serial.println(--resultado);
+  Serial.println(--resultado);
+  
+  // Atividade 3
+  int valor1 = 3 ;
+  int valor2 = 8;
+  float resultado1 = 0;
+  
+   resultado1 = (valor1 + valor2) / 2.0;
+  Serial.print(" a media eh: ");
+  Serial.print(resultado1);
+  
+     
+}
+void loop ()
+{
+  
+}
