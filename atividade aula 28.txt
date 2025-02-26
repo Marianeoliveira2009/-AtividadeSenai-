@@ -1,0 +1,36 @@
+/* Nome do arquivo: atividade estrutura de decisão
+Autor: Mariane S Olivera
+Data:26/02/2025
+Descrição: Atividade relacionada a aula 27(estrutura de decisão), a atividade envolve 
+
+*/
+void setup()
+{
+ Serial.begin(9600);
+  
+  float peso = 79;
+  float altura = 1.78;
+  float resultado = 0;
+  
+ 
+  resultado = peso / sq (altura);
+  Serial.print("seu peso: ");
+  Serial.println(resultado);
+  
+   float IMC = peso / sq (altura);
+  if( IMC > 18.5){
+    Serial.println("abaixo do peso ");
+    
+  }else if(IMC<= 18.5&& peso > 24.9){
+  Serial.println("peso normal");
+    
+  }else if(IMC <= 25,0 && peso > 29,9){
+    Serial.println("peso pouco alterado");
+  }else{
+    Serial.println("peso bastante alterado");
+}
+}
+void loop()
+{
+  
+}
