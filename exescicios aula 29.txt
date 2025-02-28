@@ -1,0 +1,198 @@
+/*Nome do arquivo: Exescicios aula 29
+Autor: Mariane S Oliveira 
+Data:28/02/2025
+Descrição: atividades de estrutura condicional 
+*/
+
+//Atividade 1
+
+#define LedVermeio 13
+# define tempoligado 2000
+# define tempodesligado 000
+
+void setup()
+{
+  
+ 
+  
+  Serial.begin(9600);
+
+  pinMode(LedVermeio, OUTPUT);
+  
+  int temperatura = 30;
+  
+  if(temperatura >= 30){
+  digitalWrite(LedVermeio, HIGH);
+    delay(tempoligado);
+  digitalWrite(LedVermeio, LOW);
+    
+  }else if(temperatura <= 20  && temperatura >= 18){ 
+  digitalWrite(LedVermeio, HIGH);             
+  digitalWrite(LedVermeio, LOW);
+    
+  }  
+    
+  } 
+
+void loop()
+{
+ 
+  
+}
+
+// Atividade 2
+
+void setup()
+{
+  #define pinLedVermeio 12
+  #define ligado 2000 
+  #define desligado 1000
+  int bateria = 20;
+    
+    Serial.begin(9600);
+
+  pinMode(pinLedVermeio, OUTPUT);
+   
+  if(bateria >= 20){
+  digitalWrite(pinLedVermeio , HIGH);
+    delay(desligado);
+  digitalWrite(pinLedVermeio , LOW);
+    
+  }else if(bateria <=  20 && bateria  >= 18);
+  digitalWrite(pinLedVermeio , HIGH);               
+  digitalWrite(pinLedVermeio , LOW);
+}
+
+
+// atividade 3
+
+
+int numeroA = 10;
+int dividido = 2;
+int resultado = 0;
+# define pinLedazul 11
+# define ligado 2000
+#define desligado
+
+void setup()
+{  
+  pinMode (pinLedazul, OUTPUT);
+    
+resultado = numeroA % 2;
+  if( resultado == 0){
+digitalWrite(pinLedazul, HIGH);
+  }  
+
+
+
+}
+
+void loop()
+{
+  
+}
+
+// Atividade 4
+
+
+int numeroI = 9;
+
+void setup()
+{
+  Serial.begin(9600);
+  if( numeroI >= 0 ){
+    Serial.println("positivo");
+  }else if( numeroI <= 0 && numeroI >= -8){
+    Serial.println("negativo");
+}
+}
+void loop()
+{
+  
+}
+
+// Atividade 5
+
+int salario = 850;
+int resultado = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+  
+  Serial.println(" jorginho do bras: ");
+  Serial.println(" vendedor: ");
+  Serial.println(" salario 850: ");
+  Serial.println("reajuste");
+  if(salario < 1000){ resultado = salario * 10 / 100 + salario;
+  Serial.println(resultado);
+                    } 
+}
+
+void loop()
+{
+  
+}
+
+// atividade 6
+
+int salario = 500;
+int resultado = 0;
+
+void setup()
+{
+ Serial.begin(9600);
+  resultado = salario * 30 / 100 + salario;
+  if( salario <= 500){
+  Serial.println("reajuste ");
+  Serial.println(resultado);
+  }else if( salario > 500){
+    Serial.println("não tem direito ao reajuste");
+}
+}
+void loop()
+{
+  
+}
+
+// Atividade 7
+
+int numeroA = 15;
+int numeroB = 30;
+void setup()
+{
+ Serial.begin(9600);
+  
+  if( numeroA > numeroB){
+  Serial.println(" o numero maior eh numeroA");
+  } else 
+    Serial.print("o numero maior eh numeroB");
+}  
+
+void loop()
+{
+  
+}
+
+// Atividade 8
+
+ float matematica = 4;
+float historia = 7;
+ float biologia = 10;
+float artes = 6;
+float resultado = 0 ;
+void setup()
+{
+  Serial.begin(9600);
+  resultado =( artes + matematica + historia + biologia)/ 4;
+  if(resultado > 7 ){
+    Serial.println("aprovado");
+  }else if( resultado < 5){
+    Serial.println("recuperação");
+  
+}
+}
+void loop()
+{
+  
+}
