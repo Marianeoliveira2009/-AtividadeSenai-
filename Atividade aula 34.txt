@@ -1,0 +1,72 @@
+/**Nome do arquivo: Exescicio aula 34
+Autor:Mariane S Oliveira
+Data:11/03/2025
+Descricao: Atividade referente a aula 33,
+fazer o Led piscar quando o botao for acionado.
+*/
+#define pinbotao 10
+#define pinLed 2
+
+void setup()
+{
+ Serial.begin(9600);
+  pinMode(pinLed, OUTPUT);
+  pinMode(pinbotao, INPUT);
+  
+}
+
+void loop()
+{
+  //READ = LER
+  //WRITE = ESCREVER
+  
+  bool estadobotao = digitalRead(pinbotao);
+  Serial.println(estadobotao);
+  
+  if (estadobotao == 1){
+  digitalWrite(pinLed, HIGH);
+  delay(2000);
+  digitalWrite(pinLed, LOW);
+  delay(1000);
+  }
+
+}
+
+/**Nome do arquivo: Exescicio aula 34
+Autor:Mariane S Oliveira
+Data:11/03/2025
+Descricao:Atividade referente a aula 34
+fazer o led piscar sem delay assim que apertarmos 
+o botao
+*/
+#define pinBotao 10
+#define pinLed 2
+
+void setup()
+{
+ Serial.begin(9600);
+  pinMode(pinLed, OUTPUT);
+  pinMode(pinBotao, INPUT);
+}
+
+void loop()
+{
+  //READ = LER
+  //WRITE = ESCREVER
+   unsigned long tempoinicial = millis();
+   bool estadoBotao = digitalRead(pinBotao);
+   static bool estadoLed = 0;
+   static unsigned long tempoanterior = 0;
+  
+  if(estadoBotao);
+  {
+    if(tempoinicial - tempoanterior >= 1000)
+    {
+    estadoLed = !estadoLed;
+    digitalWrite(pinLed, estadoLed);
+    tempoanterior = tempoinicial;
+      
+    }else digitalWrite(pinLed, LOW);
+  
+  }
+}
