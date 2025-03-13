@@ -1,0 +1,34 @@
+/**Nome do arquivo: Exescicio aula 35
+Autor:Mariane S Oliveira
+Data:12/03/2025
+Descricao:Atividade relacionada a aula 35
+ligar botao, depois ligar o led, desligar o botao e apos 
+desse comando desligar o led
+*/
+#define pinBotao 10
+#define pinLedamarelo 2
+#define tempoLigado 1000
+unsigned long tempoInicial = 0;
+bool estadoLed = 0;
+
+int estadoAnteriorBotao = 0;
+
+void setup()
+{
+   Serial.begin(9600);
+   pinMode(pinLedamarelo, OUTPUT);
+   pinMode(pinBotao, INPUT);														
+}
+
+void loop()
+{
+    bool estadoBotao = digitalRead(pinBotao);
+    Serial.println(estadoBotao);
+    if(estadoBotao == 1 && estadoAnteriorBotao == 0){
+          estadoLed = !estadoLed;
+    digitalWrite(pinLedamarelo, estadoLed); 
+    }
+   
+    estadoAnteriorBotao = estadoBotao;
+      																																	    
+  }
