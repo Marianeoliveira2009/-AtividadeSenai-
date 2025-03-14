@@ -1,0 +1,23 @@
+void setup()
+{ 
+  Serial.begin(9600);
+  
+  int temperatura = 0;
+  
+  if(temperatura < 10){
+    Serial.println("Frio extremo");
+  }
+  else if(temperatura >= 10 && temperatura > 21){
+    Serial.println("Frio");
+  }else if(temperatura <= 22 && temperatura > 40){
+    Serial.println("Calor estavel");
+  }else if(temperatura <= 41 && temperatura > 50){
+    Serial.println("Calor elevado");
+  }else{
+    Serial.println("Calor elevado");   
+}
+}
+void loop()
+{
+  
+}
