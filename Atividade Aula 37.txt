@@ -1,0 +1,20 @@
+/*Nome do arquivo: Exercicios Aula 37
+Autor: Mariane S Oliveira 
+Data:14/03/2025
+Descrição:Atividade relacionada a aula 37
+conseguir mostrar os numeros no monitor serial
+*/
+
+int resultado = 0;
+void setup()
+{
+ Serial.begin(9600);
+  
+}
+
+void loop()
+{
+  int valor = analogRead(A0);
+  resultado = map(valor,0,1023, 0, 100);
+  Serial.println(resultado );
+}
