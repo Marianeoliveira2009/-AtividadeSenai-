@@ -1,0 +1,43 @@
+/*Nome do arquivo: Exercicios Aula 36
+Autor: Mariane S Oliveira 
+Data:13/03/2025
+Descrição:Atividade relacionada a aula 36
+ligar o display e indentificar se o led esta 
+ligado ou desligado
+*/
+#include <LiquidCrystal_I2C.h>
+#define PinLedVermelho 13
+#define PinBotao 2
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+void setup()
+{
+  pinMode(13, OUTPUT);
+  pinMode(2, INPUT);
+  lcd.init();
+  lcd.backlight();
+} 
+void loop()
+{
+   bool estadoAtualBotao = digitalRead(estadoAtualBotao);
+   static bool estadoAnteriorBotao = 0;
+   static bool estadoLed = 0;
+
+  if(estadoAtualBotao == 1 && estadoAnteriorBotao == 0){
+  }  
+    if( estadoLed = !estadoLed);
+    digitalWrite(PinLedVermelho, estadoLed);
+    
+    if(estadoLed == 1);
+     	
+    {
+      lcd.print("Desligado");
+    }
+    else if
+    {
+      lcd.setCursor(0,0);
+      lcd.print("Ligado");
+    }
+    estadoAnteriorBotao = estadoAtualBotao;
+}
+}
