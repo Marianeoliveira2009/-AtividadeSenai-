@@ -1,0 +1,71 @@
+#include <Arduino.h>
+#include <LiquidCrystal_I2C.h>
+#define PinBotao1 5
+#define pinLed 2
+
+
+LiquidCrystal_I2C lcd(0x27, 20, 4);
+
+
+void setup()
+ {
+  pinMode(PinBotao1, INPUT_PULLUP);
+  pinMode( pinLed, OUTPUT);
+  lcd.init();
+  lcd.backlight();
+
+}
+
+void loop() 
+{
+
+  {
+static unsigned long estadoAnterior = 0;
+unsigned long tempoAtual = millis();
+bool estadobotao = digitalRead(PinBotao1);
+static unsigned long tempoUltimaMudanca = 0;
+static bool ultimaAcao = 1;
+static bool estadoLed = 0;
+static bool posicao = 0;
+static bool atualizacao =0;
+
+if (estadobotao != estadoAnterior)
+  {
+    tempoUltimaMudanca = tempoAtual;
+  }
+ if (tempoAtual - tempoUltimaMudanca > 50)
+  {
+
+    if (estadobotao != ultimaAcao)
+    {
+      ultimaAcao = estadobotao;
+
+      if (estadobotao == 0)
+      {
+       estadoLed = !estadoLed;
+     digitalWrite (pinLed, estadoLed);
+    lcd.setCursor(0,1);//escreve
+    posicao= !posicao;
+    atualizacao= 1;
+      }
+      else
+      lcd.print("              ");
+      {
+      }
+    }
+  }
+  estadoAnterior = estadobotao;
+  if (atualizacao)
+{
+  if (posicao)
+  lcd.print ("P/ aula de Lcd :)");
+
+  else
+  lcd.print ("                 ");
+
+  atualizacao=0;
+}
+}
+}
+
+
