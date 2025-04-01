@@ -52,6 +52,31 @@ void loop()
       }
     }
     estadoAnterior = estadobotao;
+    if (atualizacao)
+    {
+      //! TRATAMENTO DA MENSAGEM//
+      if (posicao)
+        lcd.print("P/ aula de Lcd  ");//imprime no lcd 
 
+      else
+        lcd.print("                 ");
+
+      //! TRATAMENTO DO ESTADO DO LED//
+      if (estadoLed)
+      {
+        lcd.setCursor(0, 2); // escreve
+        lcd.print("Led On  ");//imprime no lcd
+        lcd.setCursor(0, 3); // escreve
+        lcd.print(":)");//imprime no lcd
+      }
+      else
+      {
+        lcd.setCursor(0, 2); // escreve
+        lcd.print("Led Off  ");//imprime no lcd
+        lcd.setCursor(0, 3); // escreve
+        lcd.print(":( ");//imprime no lcd
+      }
+      atualizacao = 0;
+    }
   }
 }
