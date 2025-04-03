@@ -1,0 +1,44 @@
+#include <Arduino.h>
+
+const int pinBotao = 3;
+
+// PROTOTIPOS DAS FUNCOES
+void ligaLed(int);                 // o aviso que as "divisorias" existem
+void desligaLed(int);              // o aviso que as "divisorias" existem
+void piscaLed(int, unsigned long); // o aviso que as "divisorias" existem
+int somaDeDoisNumeros(int, int);   // variavel para guardar um numero inteiro
+void setup()
+{
+  pinMode(2, OUTPUT); // liga o pin como saida
+  Serial.begin(9600); // inicia a serial
+}
+
+void loop()
+{
+  piscaLed(2, 100);                              // a saida do pinLed e o numero do tempo para o delay(delay especificamente aqui, nao usar em outros)
+  int resultadoDaSoma = somaDeDoisNumeros(4, 8); // o resultado da soma recebe a soma de dois numeros
+  Serial.println(resultadoDaSoma);               // imprime a soma
+}
+
+void ligaLed(int pin) // Como se fosse uma divisoria pra organizar os comandos  /comando ligaLed
+{
+  digitalWrite(pin, HIGH); // liga o led
+}
+
+void desligaLed(int pin) // Como se fosse uma divisoria pra organizar os comandos /comando desligaLed
+{
+  digitalWrite(pin, LOW); // desliga o led
+}
+
+void piscaLed(int pin, unsigned long tempo) // Como se fosse uma divisoria pra organizar os comandos  /comando piscaLed
+{                                           // ORDEM DAS FUNCOES
+  ligaLed(pin);                             // liga o pinLed
+  delay(tempo);                             // espera um tempo designado
+  desligaLed(pin);                          // desliga o pinLed
+  delay(tempo);                             // espera o tempo designado
+}
+int somaDeDoisNumeros(int numeroA, int numeroB) // Funcao referente a soma sever para resignificar e somar dois numeros inteiros
+{
+  int resultado = numeroA + numeroB; // soma o numeroA com o numeroB
+  return resultado;                  // para retornar a variavel
+}
