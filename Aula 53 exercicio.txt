@@ -1,0 +1,93 @@
+///! FEITO ATE O PASSO 3 E COMECEI O POSSO 4 MAS SO INICIEI 
+
+#include <Arduino.h>
+#include <LiquidCrystal_I2C.h>
+#include <Bounce2.h>
+
+//* INSTANCIAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Bounce Botao1 = Bounce();
+Bounce Botao2 = Bounce();
+Bounce Botao3 = Bounce();
+LiquidCrystal_I2C lcd(0x27, 20, 4);
+
+#define pinLed1 5
+#define pinLed2 4
+#define pinLed3 2
+#define pinLed4 15
+#define pinBotao1 18
+#define pinBotao2 19
+#define pinBotao3 23
+
+//! VARIAVEIS GLOBAIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+bool posicao = 0;
+bool atualizacao = 0;
+int estadoanteriorBotoes = 0;
+int estadoBotao3 = 1;
+bool Contagem = 0;
+
+//* PROTOTIPOS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+void setup()
+{
+  Serial.begin(9600);
+  lcd.init();
+  lcd.backlight();
+
+  Botao1.attach(pinBotao1, INPUT_PULLUP);
+  Botao2.attach(pinBotao2, INPUT_PULLUP);
+  Botao3.attach(pinBotao3, INPUT_PULLUP);
+
+  pinMode(5, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(2, OUTPUT);
+  pinMode(15, OUTPUT);
+}
+
+void loop()
+{
+
+  //*BOTAOS ver se e verdadeiro ou falso e mostrar na Serial!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Botao1.update();
+  Botao2.update();
+  Botao3.update();
+
+  static int contagem = 0;//variavel local 
+  static bool modoSelecao = 0;//variavel local
+
+  if (Botao1.fell())
+  {
+    if (modoSelecao == 1)
+    {
+      contagem++;
+      if (contagem == 4)
+      {
+        contagem = 0;
+      }
+      Serial.println(contagem);
+    }
+  }
+  if (Botao2.fell())
+  {
+    contagem--;
+    if (contagem == -1)
+    {
+      contagem = 3;
+    }
+    Serial.println(contagem);
+  }
+  if (Botao3.fell())
+  {
+    modoSelecao = !modoSelecao;
+    Serial.println(modoSelecao);
+  }
+}
+if(Contagem);
+{
+{ 
+Contagem = 4;
+
+
+}
+
+
+}
